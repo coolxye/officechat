@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Proshot.CommandClient;
 using System.Net;
@@ -115,8 +112,10 @@ namespace ChatClient
             if ( this.remoteClient.Connected && this.txtNewMessage.Text.Trim() != "")
             {
                 this.remoteClient.SendCommand(new Proshot.CommandClient.Command(Proshot.CommandClient.CommandType.Message , this.targetIP , this.txtNewMessage.Text));
-                this.txtMessages.Text += this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine;
-                this.txtNewMessage.Text = "";
+                //this.txtMessages.Text += this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine;
+				this.txtMessages.AppendText(this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine);
+				this.txtMessages.ScrollToCaret();
+				this.txtNewMessage.Text = "";
                 this.txtNewMessage.Focus();
             }
         }
