@@ -14,15 +14,22 @@ namespace ChatClient
 		{
 			get { return client; }
 		}
-		public frmLogin(IPAddress serverIP, int serverPort)
+		//public frmLogin(IPAddress serverIP, int serverPort)
+		//{
+		//    InitializeComponent();
+		//    this.canClose = false;
+		//    Control.CheckForIllegalCrossThreadCalls = false;
+		//    this.client = new Proshot.CommandClient.CMDClient(serverIP, serverPort, "None");
+		//    this.client.CommandReceived += new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
+		//    this.client.ConnectingSuccessed += new Proshot.CommandClient.ConnectingSuccessedEventHandler(client_ConnectingSuccessed);
+		//    this.client.ConnectingFailed += new Proshot.CommandClient.ConnectingFailedEventHandler(client_ConnectingFailed);
+		//}
+
+		public frmLogin()
 		{
 			InitializeComponent();
 			this.canClose = false;
 			Control.CheckForIllegalCrossThreadCalls = false;
-			this.client = new Proshot.CommandClient.CMDClient(serverIP, serverPort, "None");
-			this.client.CommandReceived += new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
-			this.client.ConnectingSuccessed += new Proshot.CommandClient.ConnectingSuccessedEventHandler(client_ConnectingSuccessed);
-			this.client.ConnectingFailed += new Proshot.CommandClient.ConnectingFailedEventHandler(client_ConnectingFailed);
 		}
 
 		private void client_ConnectingFailed(object sender, EventArgs e)
@@ -53,6 +60,7 @@ namespace ChatClient
 				else
 				{
 					this.canClose = true;
+					this.DialogResult = DialogResult.OK;
 					this.Close();
 				}
 			}
@@ -80,9 +88,9 @@ namespace ChatClient
 			}
 
 			IPAddress serverIP = IPAddress.Parse(this.txtServerIp.Text.Trim());
-			int serverPort = 8000;
-			this.client.CommandReceived -= new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
-			this.client = new Proshot.CommandClient.CMDClient(serverIP, serverPort, "None");
+			//int serverPort = 8000;
+			//this.client.CommandReceived -= new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
+			this.client = new Proshot.CommandClient.CMDClient(serverIP, 8000, "None");
 			this.client.CommandReceived += new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
 			this.client.ConnectingSuccessed += new Proshot.CommandClient.ConnectingSuccessedEventHandler(client_ConnectingSuccessed);
 			this.client.ConnectingFailed += new Proshot.CommandClient.ConnectingFailedEventHandler(client_ConnectingFailed);
@@ -112,7 +120,10 @@ namespace ChatClient
 			if (!this.canClose)
 				e.Cancel = true;
 			else
-				this.client.CommandReceived -= new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
+			{
+				if (this.client != null)
+					this.client.CommandReceived -= new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
+			}
 		}
 	}
 }

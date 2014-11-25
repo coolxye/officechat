@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Net;
+using System.Windows.Forms;
 using Proshot.CommandClient;
 
 namespace ChatClient
@@ -87,17 +87,21 @@ namespace ChatClient
 		{
 			if (this.mniEnter.Text == "Login")
 			{
-				frmLogin dlg = new frmLogin(IPAddress.Parse("10.73.219.151"), 8000);
-				dlg.ShowDialog();
-				this.client = dlg.Client;
+				//frmLogin dlg = new frmLogin(IPAddress.Parse("10.73.219.151"), 8000);
+				frmLogin dlg = new frmLogin();
 
-				if (this.client.Connected)
+				if (dlg.ShowDialog() == DialogResult.OK)
 				{
-					this.client.CommandReceived += new Proshot.CommandClient.CommandReceivedEventHandler(client_CommandReceived);
-					this.client.SendCommand(new Command(CommandType.FreeCommand, IPAddress.Broadcast, this.client.IP + ":" + this.client.NetworkName));
-					this.client.SendCommand(new Proshot.CommandClient.Command(Proshot.CommandClient.CommandType.SendClientList, this.client.ServerIP));
-					this.AddToList(this.client.IP.ToString(), this.client.NetworkName);
-					this.mniEnter.Text = "Log Off";
+					this.client = dlg.Client;
+
+					if (this.client.Connected)
+					{
+						this.client.CommandReceived += new Proshot.CommandClient.CommandReceivedEventHandler(client_CommandReceived);
+						this.client.SendCommand(new Command(CommandType.FreeCommand, IPAddress.Broadcast, this.client.IP + ":" + this.client.NetworkName));
+						this.client.SendCommand(new Proshot.CommandClient.Command(Proshot.CommandClient.CommandType.SendClientList, this.client.ServerIP));
+						this.AddToList(this.client.IP.ToString(), this.client.NetworkName);
+						this.mniEnter.Text = "Log Off";
+					}
 				}
 			}
 			else
