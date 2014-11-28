@@ -28,6 +28,9 @@ namespace ChatClient
 		public frmLogin()
 		{
 			InitializeComponent();
+
+			this.cboServer.SelectedIndex = 0;
+
 			this.canClose = false;
 			Control.CheckForIllegalCrossThreadCalls = false;
 		}
@@ -68,12 +71,12 @@ namespace ChatClient
 
 		private void LoginToServer()
 		{
-			if (!Regex.IsMatch(this.txtServerIp.Text.Trim(),
+			if (!Regex.IsMatch(this.cboServer.Text.Trim(),
 				@"^(?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))$"))
 			{
 				MessageBox.Show(this, "Server isn't exist !", "Error");
 				this.SetEnablity(true);
-				this.txtServerIp.Focus();
+				this.cboServer.Focus();
 				return;
 			}
 
@@ -87,7 +90,7 @@ namespace ChatClient
 				return;
 			}
 
-			IPAddress serverIP = IPAddress.Parse(this.txtServerIp.Text.Trim());
+			IPAddress serverIP = IPAddress.Parse(this.cboServer.Text.Trim());
 			//int serverPort = 8000;
 			//this.client.CommandReceived -= new Proshot.CommandClient.CommandReceivedEventHandler(CommandReceived);
 			this.client = new Proshot.CommandClient.CMDClient(serverIP, 8000, "None");
@@ -105,7 +108,7 @@ namespace ChatClient
 		private void SetEnablity(bool enable)
 		{
 			this.btnEnter.Enabled = enable;
-			this.txtServerIp.Enabled = enable;
+			this.cboServer.Enabled = enable;
 			this.txtUserName.Enabled = enable;
 			this.btnExit.Enabled = enable;
 		}

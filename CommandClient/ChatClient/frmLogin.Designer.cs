@@ -33,7 +33,7 @@
 			this.btnEnter = new System.Windows.Forms.Button();
 			this.btnExit = new System.Windows.Forms.Button();
 			this.lblServer = new System.Windows.Forms.Label();
-			this.txtServerIp = new System.Windows.Forms.TextBox();
+			this.cboServer = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// lblUserName
@@ -81,13 +81,15 @@
 			this.lblServer.TabIndex = 0;
 			this.lblServer.Text = "Sever IP :";
 			// 
-			// txtServerIp
+			// cboServer
 			// 
-			this.txtServerIp.Location = new System.Drawing.Point(83, 10);
-			this.txtServerIp.MaxLength = 15;
-			this.txtServerIp.Name = "txtServerIp";
-			this.txtServerIp.Size = new System.Drawing.Size(103, 21);
-			this.txtServerIp.TabIndex = 1;
+			this.cboServer.FormattingEnabled = true;
+			this.cboServer.Items.AddRange(new object[] {
+            "10.73.219.151"});
+			this.cboServer.Location = new System.Drawing.Point(83, 10);
+			this.cboServer.Name = "cboServer";
+			this.cboServer.Size = new System.Drawing.Size(103, 20);
+			this.cboServer.TabIndex = 6;
 			// 
 			// frmLogin
 			// 
@@ -97,7 +99,7 @@
 			this.CancelButton = this.btnExit;
 			this.ClientSize = new System.Drawing.Size(198, 96);
 			this.ControlBox = false;
-			this.Controls.Add(this.txtServerIp);
+			this.Controls.Add(this.cboServer);
 			this.Controls.Add(this.lblServer);
 			this.Controls.Add(this.btnExit);
 			this.Controls.Add(this.btnEnter);
@@ -122,7 +124,7 @@
 		private System.Windows.Forms.Button btnEnter;
 		private System.Windows.Forms.Button btnExit;
 		private System.Windows.Forms.Label lblServer;
-		private System.Windows.Forms.TextBox txtServerIp;
+		private System.Windows.Forms.ComboBox cboServer;
 
 	}
 }
