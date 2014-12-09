@@ -72,7 +72,11 @@ namespace ChatClient
                 case ( CommandType.Message ):
                     if ( !e.Command.Target.Equals(IPAddress.Broadcast) && e.Command.SenderIP.Equals(this.targetIP))
                     {
-                        this.txtMessages.Text += e.Command.SenderName + ": " + e.Command.MetaData + Environment.NewLine;
+                        //this.txtMessages.Text += e.Command.SenderName + ": " + e.Command.MetaData + Environment.NewLine;
+						this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
+						this.txtMessages.SelectionAlignment = HorizontalAlignment.Left;
+						this.txtMessages.AppendText(e.Command.SenderName + ": " + e.Command.MetaData + Environment.NewLine);
+						this.txtMessages.ScrollToCaret();
                         if ( !this.activated)
                         {
                             if(this.WindowState == FormWindowState.Normal || this.WindowState == FormWindowState.Maximized)
@@ -113,7 +117,9 @@ namespace ChatClient
             {
                 this.remoteClient.SendCommand(new Proshot.CommandClient.Command(Proshot.CommandClient.CommandType.Message , this.targetIP , this.txtNewMessage.Text));
                 //this.txtMessages.Text += this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine;
-				this.txtMessages.AppendText(this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine);
+				this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
+				this.txtMessages.SelectionAlignment = HorizontalAlignment.Right;
+				this.txtMessages.AppendText(this.txtNewMessage.Text.Trim() + " :" + this.remoteClient.NetworkName + Environment.NewLine);
 				this.txtMessages.ScrollToCaret();
 				this.txtNewMessage.Text = "";
                 this.txtNewMessage.Focus();

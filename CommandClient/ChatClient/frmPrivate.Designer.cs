@@ -43,7 +43,7 @@
 			// 
 			this.txtNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtNewMessage.Location = new System.Drawing.Point(65, 223);
+			this.txtNewMessage.Location = new System.Drawing.Point(65, 206);
 			this.txtNewMessage.Name = "txtNewMessage";
 			this.txtNewMessage.Size = new System.Drawing.Size(203, 21);
 			this.txtNewMessage.TabIndex = 1;
@@ -53,18 +53,18 @@
 			this.lblNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblNewMessage.AutoSize = true;
-			this.lblNewMessage.Location = new System.Drawing.Point(3, 226);
+			this.lblNewMessage.Location = new System.Drawing.Point(3, 209);
 			this.lblNewMessage.Name = "lblNewMessage";
-			this.lblNewMessage.Size = new System.Drawing.Size(56, 13);
+			this.lblNewMessage.Size = new System.Drawing.Size(59, 12);
 			this.lblNewMessage.TabIndex = 2;
 			this.lblNewMessage.Text = "Message :";
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSend.Location = new System.Drawing.Point(276, 222);
+			this.btnSend.Location = new System.Drawing.Point(276, 205);
 			this.btnSend.Name = "btnSend";
-			this.btnSend.Size = new System.Drawing.Size(67, 23);
+			this.btnSend.Size = new System.Drawing.Size(67, 21);
 			this.btnSend.TabIndex = 3;
 			this.btnSend.Text = "Send";
 			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -90,14 +90,14 @@
 			// mniSave
 			// 
 			this.mniSave.Name = "mniSave";
-			this.mniSave.Size = new System.Drawing.Size(152, 22);
+			this.mniSave.Size = new System.Drawing.Size(94, 22);
 			this.mniSave.Text = "Save";
 			this.mniSave.Click += new System.EventHandler(this.mniSave_Click);
 			// 
 			// mniExit
 			// 
 			this.mniExit.Name = "mniExit";
-			this.mniExit.Size = new System.Drawing.Size(152, 22);
+			this.mniExit.Size = new System.Drawing.Size(94, 22);
 			this.mniExit.Text = "Exit";
 			this.mniExit.Click += new System.EventHandler(this.mniExit_Click);
 			// 
@@ -106,24 +106,23 @@
 			this.txtMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtMessages.Location = new System.Drawing.Point(2, 27);
+			this.txtMessages.Location = new System.Drawing.Point(2, 25);
 			this.txtMessages.Name = "txtMessages";
-			this.txtMessages.Size = new System.Drawing.Size(343, 185);
+			this.txtMessages.Size = new System.Drawing.Size(343, 171);
 			this.txtMessages.TabIndex = 8;
 			this.txtMessages.Text = "";
 			// 
 			// frmPrivate
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(346, 258);
+			this.ClientSize = new System.Drawing.Size(346, 238);
 			this.Controls.Add(this.txtMessages);
 			this.Controls.Add(this.btnSend);
 			this.Controls.Add(this.lblNewMessage);
 			this.Controls.Add(this.txtNewMessage);
 			this.Controls.Add(this.mnuMain);
-			this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-			this.MinimumSize = new System.Drawing.Size(354, 292);
+			this.MinimumSize = new System.Drawing.Size(354, 272);
 			this.Name = "frmPrivate";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
