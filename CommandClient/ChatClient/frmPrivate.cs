@@ -65,6 +65,8 @@ namespace ChatClient
             this.remoteClient.CommandReceived += new CommandReceivedEventHandler(private_CommandReceived);
         }
 
+		private DateTime dtCur;
+
         private void private_CommandReceived(object sender , CommandEventArgs e)
         {
             switch ( e.Command.CommandType )
@@ -73,6 +75,14 @@ namespace ChatClient
                     if ( !e.Command.Target.Equals(IPAddress.Broadcast) && e.Command.SenderIP.Equals(this.targetIP))
                     {
                         //this.txtMessages.Text += e.Command.SenderName + ": " + e.Command.MetaData + Environment.NewLine;
+						DateTime dtRe = DateTime.Now;
+						if (dtCur == null || dtCur.Date != dtRe.Date || dtCur.Hour != dtRe.Hour || dtCur.Minute != dtRe.Minute)
+						{
+							this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
+							this.txtMessages.SelectionAlignment = HorizontalAlignment.Center;
+							this.txtMessages.AppendText(dtRe.ToString("f") + Environment.NewLine);
+							dtCur = dtRe;
+						}
 						this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
 						this.txtMessages.SelectionAlignment = HorizontalAlignment.Left;
 						this.txtMessages.AppendText(e.Command.SenderName + ": " + e.Command.MetaData + Environment.NewLine);
@@ -117,6 +127,14 @@ namespace ChatClient
             {
                 this.remoteClient.SendCommand(new Proshot.CommandClient.Command(Proshot.CommandClient.CommandType.Message , this.targetIP , this.txtNewMessage.Text));
                 //this.txtMessages.Text += this.remoteClient.NetworkName + ": " + this.txtNewMessage.Text.Trim() + Environment.NewLine;
+				DateTime dtRe = DateTime.Now;
+				if (dtCur == null || dtCur.Date != dtRe.Date || dtCur.Hour != dtRe.Hour || dtCur.Minute != dtRe.Minute)
+				{
+					this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
+					this.txtMessages.SelectionAlignment = HorizontalAlignment.Center;
+					this.txtMessages.AppendText(dtRe.ToString("f") + Environment.NewLine);
+					dtCur = dtRe;
+				}
 				this.txtMessages.SelectionStart = this.txtMessages.Text.Length;
 				this.txtMessages.SelectionAlignment = HorizontalAlignment.Right;
 				this.txtMessages.AppendText(this.txtNewMessage.Text.Trim() + " :" + this.remoteClient.NetworkName + Environment.NewLine);

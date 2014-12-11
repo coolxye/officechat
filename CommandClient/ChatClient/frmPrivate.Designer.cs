@@ -106,6 +106,7 @@
 			this.txtMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtMessages.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.txtMessages.Location = new System.Drawing.Point(2, 25);
 			this.txtMessages.Name = "txtMessages";
 			this.txtMessages.Size = new System.Drawing.Size(343, 171);
