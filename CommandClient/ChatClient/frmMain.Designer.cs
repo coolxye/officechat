@@ -52,12 +52,16 @@
 			this.minSave = new System.Windows.Forms.ToolStripMenuItem();
 			this.tssOne = new System.Windows.Forms.ToolStripSeparator();
 			this.miniExit = new System.Windows.Forms.ToolStripMenuItem();
+			this.ntiIcon = new System.Windows.Forms.NotifyIcon(this.components);
+			this.cnxMnuIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.cnxMnuEdit.SuspendLayout();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
 			this.splitContainer.SuspendLayout();
 			this.cnxMniCopy.SuspendLayout();
 			this.mnuMain.SuspendLayout();
+			this.cnxMnuIcon.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtNewMessage
@@ -263,6 +267,28 @@
 			this.miniExit.Text = "Exit";
 			this.miniExit.Click += new System.EventHandler(this.mniExit_Click);
 			// 
+			// ntiIcon
+			// 
+			this.ntiIcon.ContextMenuStrip = this.cnxMnuIcon;
+			this.ntiIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiIcon.Icon")));
+			this.ntiIcon.Text = "Public Room";
+			this.ntiIcon.Visible = true;
+			this.ntiIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntiIcon_MouseDoubleClick);
+			// 
+			// cnxMnuIcon
+			// 
+			this.cnxMnuIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiExit});
+			this.cnxMnuIcon.Name = "cnxMnuIcon";
+			this.cnxMnuIcon.Size = new System.Drawing.Size(95, 26);
+			// 
+			// tsmiExit
+			// 
+			this.tsmiExit.Name = "tsmiExit";
+			this.tsmiExit.Size = new System.Drawing.Size(152, 22);
+			this.tsmiExit.Text = "Exit";
+			this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -285,6 +311,7 @@
 			this.cnxMniCopy.ResumeLayout(false);
 			this.mnuMain.ResumeLayout(false);
 			this.mnuMain.PerformLayout();
+			this.cnxMnuIcon.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -313,6 +340,10 @@
 		private System.Windows.Forms.ToolStripMenuItem minSave;
 		private System.Windows.Forms.ToolStripSeparator tssOne;
 		private System.Windows.Forms.ToolStripMenuItem miniExit;
+		private System.Windows.Forms.ImageList imgLstViw;
+		private System.Windows.Forms.NotifyIcon ntiIcon;
+		private System.Windows.Forms.ContextMenuStrip cnxMnuIcon;
+		private System.Windows.Forms.ToolStripMenuItem tsmiExit;
 	}
 }
 

@@ -200,7 +200,13 @@ namespace ChatClient
 		private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			//Proshot.LanguageManager.LanguageActions.ChangeLanguageToEnglish();
-			this.client.Disconnect();
+			if (e.CloseReason == CloseReason.UserClosing)
+			{
+				this.Hide();
+				e.Cancel = true;
+			}
+			else
+				this.client.Disconnect();
 		}
 
 		private void mniSave_Click(object sender, EventArgs e)
@@ -236,5 +242,25 @@ namespace ChatClient
 			this.StartPrivateChat();
 		}
 
+		private void tsmiExit_Click(object sender, EventArgs e)
+		{
+			this.client.Disconnect();
+			this.Close();
+			this.Dispose();
+			Application.Exit();
+		}
+
+		private void ntiIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				this.Show();
+
+				if (this.WindowState == FormWindowState.Minimized)
+					this.WindowState = FormWindowState.Normal;
+
+				this.Activate();
+			}
+		}
 	}
 }
