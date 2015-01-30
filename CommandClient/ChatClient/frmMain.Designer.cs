@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.txtNewMessage = new System.Windows.Forms.TextBox();
 			this.cnxMnuEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.mniCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,7 @@
 			this.lstViwUsers = new System.Windows.Forms.ListView();
 			this.colIcon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colUserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.imgLstViw = new System.Windows.Forms.ImageList(this.components);
 			this.txtMessages = new System.Windows.Forms.RichTextBox();
 			this.cnxMniCopy = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.mniCopyText = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +65,9 @@
 			this.txtNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNewMessage.ContextMenuStrip = this.cnxMnuEdit;
-			this.txtNewMessage.Location = new System.Drawing.Point(204, 394);
+			this.txtNewMessage.Location = new System.Drawing.Point(200, 353);
 			this.txtNewMessage.Name = "txtNewMessage";
-			this.txtNewMessage.Size = new System.Drawing.Size(353, 21);
+			this.txtNewMessage.Size = new System.Drawing.Size(347, 21);
 			this.txtNewMessage.TabIndex = 1;
 			// 
 			// cnxMnuEdit
@@ -74,7 +76,6 @@
             this.mniCopy,
             this.mniPaste});
 			this.cnxMnuEdit.Name = "cnxMnuEdit";
-			this.cnxMnuEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.cnxMnuEdit.Size = new System.Drawing.Size(101, 48);
 			// 
 			// mniCopy
@@ -96,16 +97,16 @@
 			this.lblNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblNewMessage.AutoSize = true;
-			this.lblNewMessage.Location = new System.Drawing.Point(137, 397);
+			this.lblNewMessage.Location = new System.Drawing.Point(141, 357);
 			this.lblNewMessage.Name = "lblNewMessage";
-			this.lblNewMessage.Size = new System.Drawing.Size(59, 12);
+			this.lblNewMessage.Size = new System.Drawing.Size(53, 12);
 			this.lblNewMessage.TabIndex = 2;
-			this.lblNewMessage.Text = "Message :";
+			this.lblNewMessage.Text = "Message:";
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSend.Location = new System.Drawing.Point(563, 393);
+			this.btnSend.Location = new System.Drawing.Point(553, 353);
 			this.btnSend.Name = "btnSend";
 			this.btnSend.Size = new System.Drawing.Size(67, 21);
 			this.btnSend.TabIndex = 3;
@@ -115,7 +116,7 @@
 			// btnPrivate
 			// 
 			this.btnPrivate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnPrivate.Location = new System.Drawing.Point(6, 391);
+			this.btnPrivate.Location = new System.Drawing.Point(12, 353);
 			this.btnPrivate.Name = "btnPrivate";
 			this.btnPrivate.Size = new System.Drawing.Size(123, 21);
 			this.btnPrivate.TabIndex = 6;
@@ -127,7 +128,8 @@
 			this.splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.splitContainer.Location = new System.Drawing.Point(3, 22);
+			this.splitContainer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.splitContainer.Location = new System.Drawing.Point(12, 27);
 			this.splitContainer.Name = "splitContainer";
 			// 
 			// splitContainer.Panel1
@@ -140,7 +142,7 @@
 			// 
 			this.splitContainer.Panel2.Controls.Add(this.txtMessages);
 			this.splitContainer.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.splitContainer.Size = new System.Drawing.Size(627, 364);
+			this.splitContainer.Size = new System.Drawing.Size(608, 320);
 			this.splitContainer.SplitterDistance = 130;
 			this.splitContainer.TabIndex = 8;
 			// 
@@ -159,8 +161,8 @@
 			this.lstViwUsers.Location = new System.Drawing.Point(0, 0);
 			this.lstViwUsers.MultiSelect = false;
 			this.lstViwUsers.Name = "lstViwUsers";
-			this.lstViwUsers.RightToLeftLayout = true;
-			this.lstViwUsers.Size = new System.Drawing.Size(130, 364);
+			this.lstViwUsers.Size = new System.Drawing.Size(130, 320);
+			this.lstViwUsers.SmallImageList = this.imgLstViw;
 			this.lstViwUsers.TabIndex = 8;
 			this.lstViwUsers.UseCompatibleStateImageBehavior = false;
 			this.lstViwUsers.View = System.Windows.Forms.View.Details;
@@ -176,14 +178,19 @@
 			this.colUserName.Text = "";
 			this.colUserName.Width = 85;
 			// 
+			// imgLstViw
+			// 
+			this.imgLstViw.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgLstViw.ImageStream")));
+			this.imgLstViw.TransparentColor = System.Drawing.Color.Transparent;
+			this.imgLstViw.Images.SetKeyName(0, "Smiley.png");
+			// 
 			// txtMessages
 			// 
-			this.txtMessages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.txtMessages.ContextMenuStrip = this.cnxMniCopy;
 			this.txtMessages.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.txtMessages.Location = new System.Drawing.Point(0, 0);
 			this.txtMessages.Name = "txtMessages";
-			this.txtMessages.Size = new System.Drawing.Size(493, 364);
+			this.txtMessages.Size = new System.Drawing.Size(474, 320);
 			this.txtMessages.TabIndex = 9;
 			this.txtMessages.Text = "";
 			// 
@@ -192,7 +199,6 @@
 			this.cnxMniCopy.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniCopyText});
 			this.cnxMniCopy.Name = "cnxMniCopy";
-			this.cnxMniCopy.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.cnxMniCopy.Size = new System.Drawing.Size(95, 26);
 			// 
 			// mniCopyText
@@ -208,7 +214,7 @@
             this.tsmiChat});
 			this.mnuMain.Location = new System.Drawing.Point(0, 0);
 			this.mnuMain.Name = "mnuMain";
-			this.mnuMain.Size = new System.Drawing.Size(635, 24);
+			this.mnuMain.Size = new System.Drawing.Size(632, 24);
 			this.mnuMain.TabIndex = 9;
 			this.mnuMain.Text = "menuStrip1";
 			// 
@@ -227,33 +233,33 @@
 			// mniEnter
 			// 
 			this.mniEnter.Name = "mniEnter";
-			this.mniEnter.Size = new System.Drawing.Size(112, 22);
+			this.mniEnter.Size = new System.Drawing.Size(152, 22);
 			this.mniEnter.Text = "Login";
 			this.mniEnter.Click += new System.EventHandler(this.mniEnter_Click);
 			// 
 			// miniPrivate
 			// 
 			this.miniPrivate.Name = "miniPrivate";
-			this.miniPrivate.Size = new System.Drawing.Size(112, 22);
+			this.miniPrivate.Size = new System.Drawing.Size(152, 22);
 			this.miniPrivate.Text = "Private";
 			this.miniPrivate.Click += new System.EventHandler(this.mniPrivate_Click);
 			// 
 			// minSave
 			// 
 			this.minSave.Name = "minSave";
-			this.minSave.Size = new System.Drawing.Size(112, 22);
+			this.minSave.Size = new System.Drawing.Size(152, 22);
 			this.minSave.Text = "Save";
 			this.minSave.Click += new System.EventHandler(this.mniSave_Click);
 			// 
 			// tssOne
 			// 
 			this.tssOne.Name = "tssOne";
-			this.tssOne.Size = new System.Drawing.Size(109, 6);
+			this.tssOne.Size = new System.Drawing.Size(149, 6);
 			// 
 			// miniExit
 			// 
 			this.miniExit.Name = "miniExit";
-			this.miniExit.Size = new System.Drawing.Size(112, 22);
+			this.miniExit.Size = new System.Drawing.Size(152, 22);
 			this.miniExit.Text = "Exit";
 			this.miniExit.Click += new System.EventHandler(this.mniExit_Click);
 			// 
@@ -261,18 +267,15 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(635, 424);
+			this.ClientSize = new System.Drawing.Size(632, 386);
 			this.Controls.Add(this.splitContainer);
-			this.Controls.Add(this.btnPrivate);
 			this.Controls.Add(this.txtNewMessage);
-			this.Controls.Add(this.btnSend);
-			this.Controls.Add(this.lblNewMessage);
 			this.Controls.Add(this.mnuMain);
+			this.Controls.Add(this.btnPrivate);
+			this.Controls.Add(this.lblNewMessage);
+			this.Controls.Add(this.btnSend);
 			this.MainMenuStrip = this.mnuMain;
-			this.MinimumSize = new System.Drawing.Size(643, 458);
 			this.Name = "frmMain";
-			this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.RightToLeftLayout = true;
 			this.Text = "Public Room";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
 			this.cnxMnuEdit.ResumeLayout(false);

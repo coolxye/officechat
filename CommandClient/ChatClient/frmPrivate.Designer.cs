@@ -1,33 +1,33 @@
 ﻿namespace ChatClient
 {
-    partial class frmPrivate
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class frmPrivate
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if ( disposing && ( components != null ) )
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.txtNewMessage = new System.Windows.Forms.TextBox();
 			this.lblNewMessage = new System.Windows.Forms.Label();
 			this.btnSend = new System.Windows.Forms.Button();
@@ -43,9 +43,9 @@
 			// 
 			this.txtNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtNewMessage.Location = new System.Drawing.Point(65, 206);
+			this.txtNewMessage.Location = new System.Drawing.Point(71, 203);
 			this.txtNewMessage.Name = "txtNewMessage";
-			this.txtNewMessage.Size = new System.Drawing.Size(203, 21);
+			this.txtNewMessage.Size = new System.Drawing.Size(206, 21);
 			this.txtNewMessage.TabIndex = 1;
 			// 
 			// lblNewMessage
@@ -53,18 +53,18 @@
 			this.lblNewMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblNewMessage.AutoSize = true;
-			this.lblNewMessage.Location = new System.Drawing.Point(3, 209);
+			this.lblNewMessage.Location = new System.Drawing.Point(12, 207);
 			this.lblNewMessage.Name = "lblNewMessage";
-			this.lblNewMessage.Size = new System.Drawing.Size(59, 12);
+			this.lblNewMessage.Size = new System.Drawing.Size(53, 12);
 			this.lblNewMessage.TabIndex = 2;
-			this.lblNewMessage.Text = "Message :";
+			this.lblNewMessage.Text = "Message:";
 			// 
 			// btnSend
 			// 
 			this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSend.Location = new System.Drawing.Point(276, 205);
+			this.btnSend.Location = new System.Drawing.Point(283, 203);
 			this.btnSend.Name = "btnSend";
-			this.btnSend.Size = new System.Drawing.Size(67, 21);
+			this.btnSend.Size = new System.Drawing.Size(57, 21);
 			this.btnSend.TabIndex = 3;
 			this.btnSend.Text = "Send";
 			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -75,7 +75,7 @@
             this.mniChat});
 			this.mnuMain.Location = new System.Drawing.Point(0, 0);
 			this.mnuMain.Name = "mnuMain";
-			this.mnuMain.Size = new System.Drawing.Size(346, 24);
+			this.mnuMain.Size = new System.Drawing.Size(352, 24);
 			this.mnuMain.TabIndex = 7;
 			// 
 			// mniChat
@@ -107,9 +107,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtMessages.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.txtMessages.Location = new System.Drawing.Point(2, 25);
+			this.txtMessages.Location = new System.Drawing.Point(0, 27);
 			this.txtMessages.Name = "txtMessages";
-			this.txtMessages.Size = new System.Drawing.Size(343, 171);
+			this.txtMessages.Size = new System.Drawing.Size(352, 170);
 			this.txtMessages.TabIndex = 8;
 			this.txtMessages.Text = "";
 			// 
@@ -117,15 +117,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(346, 238);
+			this.ClientSize = new System.Drawing.Size(352, 236);
 			this.Controls.Add(this.txtMessages);
 			this.Controls.Add(this.btnSend);
 			this.Controls.Add(this.lblNewMessage);
 			this.Controls.Add(this.txtNewMessage);
 			this.Controls.Add(this.mnuMain);
-			this.MinimumSize = new System.Drawing.Size(354, 272);
 			this.Name = "frmPrivate";
-			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Private Chat";
 			this.Activated += new System.EventHandler(this.frmPrivate_Activated);
@@ -137,18 +135,18 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
 		private System.Windows.Forms.TextBox txtNewMessage;
 		private System.Windows.Forms.Label lblNewMessage;
 		private System.Windows.Forms.Button btnSend;
 		private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem mniChat;
-        private System.Windows.Forms.ToolStripMenuItem mniSave;
-        private System.Windows.Forms.ToolStripMenuItem mniExit;
-        private System.Windows.Forms.RichTextBox txtMessages;
-    }
+		private System.Windows.Forms.ToolStripMenuItem mniChat;
+		private System.Windows.Forms.ToolStripMenuItem mniSave;
+		private System.Windows.Forms.ToolStripMenuItem mniExit;
+		private System.Windows.Forms.RichTextBox txtMessages;
+	}
 }
 

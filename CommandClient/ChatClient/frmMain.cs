@@ -151,7 +151,7 @@ namespace ChatClient
 		private void AddToList(string ip, string name)
 		{
 			ListViewItem newItem = this.lstViwUsers.Items.Add(ip);
-			newItem.ImageKey = "Smiely.png";
+			newItem.ImageKey = "Smiley.png";
 			newItem.SubItems.Add(name);
 		}
 
@@ -165,7 +165,7 @@ namespace ChatClient
 					this.privateWindowsList.Add(privateWindow);
 					privateWindow.FormClosed += new FormClosedEventHandler(privateWindow_FormClosed);
 					privateWindow.StartPosition = FormStartPosition.CenterParent;
-					privateWindow.Show(this);
+					privateWindow.Show();
 				}
 			}
 		}
@@ -177,7 +177,7 @@ namespace ChatClient
 				frmPrivate privateWindow = new frmPrivate(this.client, remoteClientIP, clientName, initialMessage);
 				this.privateWindowsList.Add(privateWindow);
 				privateWindow.FormClosed += new FormClosedEventHandler(privateWindow_FormClosed);
-				privateWindow.Show(this);
+				privateWindow.Show();
 			}
 		}
 
