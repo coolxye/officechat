@@ -265,7 +265,7 @@
 			this.miniExit.Name = "miniExit";
 			this.miniExit.Size = new System.Drawing.Size(152, 22);
 			this.miniExit.Text = "Exit";
-			this.miniExit.Click += new System.EventHandler(this.mniExit_Click);
+			this.miniExit.Click += new System.EventHandler(this.tsmiExit_Click);
 			// 
 			// ntiIcon
 			// 

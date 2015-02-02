@@ -122,10 +122,10 @@ namespace ChatClient
 		}
 
 
-		private void mniExit_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
+		//private void mniExit_Click(object sender, EventArgs e)
+		//{
+		//    this.Close();
+		//}
 
 		private void btnSend_Click(object sender, EventArgs e)
 		{
